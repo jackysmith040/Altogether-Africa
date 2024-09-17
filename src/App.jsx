@@ -10,9 +10,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import CarouselSlide from './components/CarouselSlide';
-// import Background from '/images/image6.jpg'
 import ServicesSection from './components/ServicesSection';
 import Testimonials from './components/Testimonials';
+import TeamCard from './components/TeamCard'; 
 
 
 const App = () => {
@@ -44,17 +44,23 @@ const App = () => {
           <div className="lg:w-1/2 w-full space-y-4">
             <h6 className="text-[#325d90] uppercase text-md tracking-[3px] font-bold">About Us</h6>
             <p className='font-light text-gray-800 text-justify'>
-            We are a pathway to success for Africa. As a non-profit, we unite efforts to tackle challenges faced by governments, businesses, and communities while implementing effective global solutions. Our mission supports the UN's Sustainable Development Goal 8 for inclusive economic growth and employment for all. We promote success through sharing best practices, skills, and technologies, addressing urgent developmental issues for a brighter future.
+              We are a bridge. 
+              Success crosses through us to and within Africa. We are a non-profit. We mobilise efforts that ensure continuous success for our land. 
+              We identify specific challenges of African governments, businesses, people and communities. 
+              We go on to discover working best practices and technologies implemented abroad. 
+              We, then, ensure smooth transfer of the solutions. 
+              We are passionately committed to this Sustainable Development Goal (SDG 8) of the UN "promote inclusive and sustainable economic growth, employment and decent work for all".
+              Together, we have a shared responsibility to take action on our continent’s most persistent developmental issues. 
             </p>
 
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-md py-2 text-[#325d90] uppercase">
-                  Who We Are
+                  Our Vision
                 </AccordionTrigger>
                 <AccordionContent className="font-light text-gray-700 text-justify font-open">
-                  We are a bridge to success for Africa. As a non-profit, we focus on mobilizing efforts that drive continuous progress across the continent. We identify challenges facing African governments, businesses, communities, and individuals. By discovering proven global solutions and best practices, we ensure their seamless transfer to address these issues.
+                Together, we want to see and live in a Continent (Africa) with fewer challenges, more progress.
                 </AccordionContent>
               </AccordionItem>
 
@@ -63,7 +69,7 @@ const App = () => {
                   Our Mission
                 </AccordionTrigger>
                 <AccordionContent className="font-light text-gray-700 text-justify font-open">
-                  Our mission aligns with UN Sustainable Development Goal 8, promoting inclusive and sustainable economic growth, employment, and decent work for all. Together, we share the responsibility to tackle Africa's most pressing developmental challenges.
+                Foster an all-inclusive success for Africa through transfers of best practices, skills and technologies
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -85,13 +91,13 @@ const App = () => {
         </div>
       </section>
 
-      <section>
+      <section className='h-screen'>
         <div className='flex flex-col items-center mt-10 pt-10'>
           <h6 className="text-[#325d90] uppercase text-md tracking-[3px] font-bold">Our Team</h6>
           {/* <h2 className='font-bold text-3xl text-center'>Hear What Our Clients Have To Say</h2> */}
         </div>
         <div>
-          
+          <TeamCard />
         </div>
       </section>
     </main>

@@ -31,10 +31,10 @@ const CarouselSlide = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={Slide1} alt='slide 1' className=" w-full h-[350px] object-cover rounded-lg" />
+          <img src={Slide1} alt='slide 1' className=" w-full h-[400px] object-cover rounded-lg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Slide2} alt='slide2' className=" w-full h-[350px] object-cover rounded-lg" />
+          <img src={Slide2} alt='slide2' className=" w-full h-[400px] object-cover rounded-lg" />
         </SwiperSlide>
       </Swiper>
     </div>
