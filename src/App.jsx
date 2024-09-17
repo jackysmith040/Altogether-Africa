@@ -14,6 +14,7 @@ import ServicesSection from './components/ServicesSection';
 import Testimonials from './components/Testimonials';
 import TeamCard from './components/TeamCard'; 
 import ContactInfo from './components/ContactInfo';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -108,6 +109,7 @@ const App = () => {
         </div>
         <ContactInfo />
       </section>
+      <Footer />
     </main>
   )
 }

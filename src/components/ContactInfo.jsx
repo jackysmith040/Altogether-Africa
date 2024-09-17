@@ -3,7 +3,7 @@ import { Mail, Clock, MapPin } from 'lucide-react';
 
 const ContactInfo = () => {
     return (
-        <div className="py-16 px-4 lg:px-20">
+        <div className="py-12 px-4 lg:px-20">
             {/* Contact Info Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="flex flex-col items-center text-center">
