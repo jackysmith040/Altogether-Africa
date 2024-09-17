@@ -5,7 +5,7 @@ const ContactInfo = () => {
     return (
         <div className="py-16 px-4 lg:px-20">
             {/* Contact Info Section */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="flex flex-col items-center text-center">
                     <Mail className="text-primary w-12 h-12 mb-2" />
                     <h3 className="text-lg font-semibold">Contacts Info</h3>
@@ -31,7 +31,7 @@ const ContactInfo = () => {
                 {/* Google Map Placeholder */}
                 <div className="w-full h-64 md:h-96" loading="lazy">
                     {/* Replace with an actual Google Map integration if needed */}
-                    <h4 className="text-center text-gray-500 mt-24">Google Map Placeholder</h4>
+                    <div style={{width: '100%'}}><iframe width="100%" height="444" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=444&amp;hl=en&amp;q=CF443%20Apollonia%20Road,%20Ghana%20Flag,%20Oyarifa,%20Accra,%20Ghana+(All%20Together%20Africa)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps systems</a></iframe></div>
                 </div>
 
                 {/* Form */}
