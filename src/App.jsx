@@ -13,6 +13,7 @@ import CarouselSlide from './components/CarouselSlide';
 import ServicesSection from './components/ServicesSection';
 import Testimonials from './components/Testimonials';
 import TeamCard from './components/TeamCard'; 
+import ContactInfo from './components/ContactInfo';
 
 
 const App = () => {
@@ -91,14 +92,21 @@ const App = () => {
         </div>
       </section>
 
-      <section className='h-screen'>
+      <section className='h-full'>
         <div className='flex flex-col items-center mt-10 pt-10'>
           <h6 className="text-[#325d90] uppercase text-md tracking-[3px] font-bold">Our Team</h6>
-          {/* <h2 className='font-bold text-3xl text-center'>Hear What Our Clients Have To Say</h2> */}
+          <h2 className='font-bold text-3xl text-center'>Meet Our Team</h2>
         </div>
         <div>
           <TeamCard />
         </div>
+      </section>
+      
+      <section>
+        <div className='flex flex-col items-center mt-10 pt-10'>
+          <h6 className="text-[#325d90] uppercase text-md tracking-[3px] font-bold">Contact Us</h6>
+        </div>
+        <ContactInfo />
       </section>
     </main>
   )

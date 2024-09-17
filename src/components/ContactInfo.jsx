@@ -1,0 +1,79 @@
+import React from 'react';
+import { Mail, Clock, MapPin } from 'lucide-react'; 
+
+const ContactInfo = () => {
+    return (
+        <div className="py-16 px-4 lg:px-20">
+            {/* Contact Info Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div className="flex flex-col items-center text-center">
+                    <Mail className="text-primary w-12 h-12 mb-2" />
+                    <h3 className="text-lg font-semibold">Contacts Info</h3>
+                    <p>Phone Number: 233 (0) 54 240 3741</p>
+                    <p>alltogetherafrica@gmail.com</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                    <Clock className="text-primary w-12 h-12 mb-2" />
+                    <h3 className="text-lg font-semibold">Opening Hour</h3>
+                    <p>Mon-Fri: 9:30AM - 6:30PM</p>
+                    <p>Sat-Sun: 9:30AM - 6:30PM</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                    <MapPin className="text-primary w-12 h-12 mb-2" />
+                    <h3 className="text-lg font-semibold">Service Center</h3>
+                    <p>CF443 Apollonia Road, Ghana Flag, Oyarifa</p>
+                    <p>Accra, Ghana</p>
+                </div>
+            </div>
+
+            {/* Contact Form Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Google Map Placeholder */}
+                <div className="w-full h-64 md:h-96" loading="lazy">
+                    {/* Replace with an actual Google Map integration if needed */}
+                    <h4 className="text-center text-gray-500 mt-24">Google Map Placeholder</h4>
+                </div>
+
+                {/* Form */}
+                <div>
+                    <h3 className="text-primary uppercase font-semibold mb-4">Talk to Us</h3>
+                    <h2 className="text-2xl font-bold mb-6">Do you have any question?</h2>
+                    <form className="space-y-4">
+                        <div className="grid grid-cols-2 gap-4">
+                            <input
+                                type="text"
+                                className="p-4 border border-gray-300 rounded-md w-full"
+                                placeholder="Your Name"
+                            />
+                            <input
+                                type="email"
+                                className="p-4 border border-gray-300 rounded-md w-full"
+                                placeholder="Email Address"
+                            />
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                            <input
+                                type="text"
+                                className="p-4 border border-gray-300 rounded-md w-full"
+                                placeholder="Phone Number"
+                            />
+                            <input
+                                type="text"
+                                className="p-4 border border-gray-300 rounded-md w-full"
+                                placeholder="Subject"
+                            />
+                        </div>
+                        <textarea
+                            className="p-4 border border-gray-300 rounded-md w-full"
+                            rows="4"
+                            placeholder="Message"
+                        ></textarea>
+                        <button className="bg-primary text-white py-3 px-8 rounded-md">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ContactInfo;
