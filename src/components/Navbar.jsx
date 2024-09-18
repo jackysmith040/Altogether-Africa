@@ -35,7 +35,7 @@ const Navbar = () => {
 
   // Navigation Items
   const NavList = [
-    { title: 'Home', path: '#/' },
+    { title: 'Home', path: '/' },
     { title: 'What We Do', path: '#what-we-do' },
     { title: 'About Us', path: '#about' },
     { title: 'Projects', path: '#projects' },

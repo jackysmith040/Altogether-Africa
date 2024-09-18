@@ -15,21 +15,25 @@ import Testimonials from './components/Testimonials';
 import TeamCard from './components/TeamCard'; 
 import ContactInfo from './components/ContactInfo';
 import Footer from './components/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 const App = () => {
   return (
     <main className='max-w-screen-7xl overflow-x-hidden'>
       <Navbar />
-      <section id='/'>
+      <section id='#home' data-aos="fade-down" data-aos-duration="1500" data-aos-linear="linear">
         <BackgroundSlider />
       </section>
-      <section id='what-we-do'>
+      <section id='what-we-do' data-aos="zoom-in"  data-aos-duration="500">
         <div className='flex flex-col items-center mt-5 pt-5'>
           <h2 className='font-semibold text-3xl'>What We Do</h2>
           <p className='text-center pt-3 lg:w-1/2 font-light'>A focused commitment to solving real-world problems through sustainable, cross-sector projects, driven by passion and teamwork until solutions prevail.</p>
         </div>
-        <div>
+        <div data-aos="zoom-in" data-aos-delay="70" data-aos-duration="1500">
           <Icons />
         </div>
       </section>
@@ -37,12 +41,12 @@ const App = () => {
       <section className="py-12 xl:px-24 px-4" id='about'>
         <div className="flex flex-col lg:flex-row mt-10 pt-10 mx-auto space-y-8 lg:space-y-0 lg:space-x-12">
           {/* Carousel Section */}
-          <div className="lg:w-1/2 w-full flex justify-center">
+          <div className="lg:w-1/2 w-full flex justify-center" data-aos="fade-right" data-aos-duration="1500">
             <CarouselSlide />
           </div>
 
           {/* Accordion and Text Section */}
-          <div className="lg:w-1/2 w-full space-y-4">
+          <div className="lg:w-1/2 w-full space-y-4" data-aos="fade-left" data-aos-duration="1500">
             <h6 className="text-[#325d90] uppercase text-md tracking-[3px] font-bold">About Us</h6>
             <p className='font-light text-gray-800 text-justify'>
               We are a bridge. 
@@ -78,16 +82,16 @@ const App = () => {
         </div>
       </section>
 
-      <section id='projects'>
+      <section id='projects' data-aos="fade-up" data-aos-duration='1500'>
       <ServicesSection />
       </section>
 
-      <section className='h-full xl:px-24 px-4'>
+      <section className='h-full xl:px-24 px-4' data-aos="zoom-in"  data-aos-duration="500">
         <div className='flex flex-col items-center mt-10 pt-10'>
           <h6 className="text-[#325d90] uppercase text-md tracking-[3px] font-bold">Testimonials</h6>
           <h2 className='font-bold text-3xl text-center'>Hear What Our Clients Have To Say</h2>
         </div>
-        <div>
+        <div >
           <Testimonials />
         </div>
       </section>
