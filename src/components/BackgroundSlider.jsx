@@ -30,7 +30,7 @@ const BackgroundSlider = () => {
       className="mySwiper w-full h-full"
     >
       {imageSlide.map((slide, index) => (
-        <SwiperSlide key={index} className='w-full h-full'>
+        <SwiperSlide key={index} >
             <div className='w-full h-full' 
             style={{
                 backgroundImage: `url(${slide.url})`,
@@ -38,9 +38,10 @@ const BackgroundSlider = () => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <div className="absolute inset-0  bg-gradient-to-t from-black/90  to-black/15 flex flex-col px-16 items-center justify-center p-4">
-                    <h2 className="text-white text-6xl font-extrabold uppercase mb-2 tracking-[5px]">{slide.title}</h2>
-                    <p className="text-gray-300 text-2xl font-light mb-4">{slide.description}</p>
+                <div className="absolute inset-0  bg-gradient-to-t from-black/80  to-black/15 flex flex-col px-12 items-start justify-center p-4">
+                    <h6 className="text-primary text-sm font-extrabold uppercase mb-3 tracking-[5px]">{slide.title}</h6>
+                    <h2 className="text-white text-4xl font-bold uppercase mb-2 tracking-[5px] md:w-1/2">{slide.subtitle}</h2>
+                    <p className="text-gray-300 text-xl font-light mb-4">{slide.description}</p>
                     <Link to={slide.link} className='border border-[#325d90] px-7 py-3 mt-4 uppercase text-md text-[#fff] font-semibold bg-primary rounded-md'>
                     {slide.linkText}
                     </Link>

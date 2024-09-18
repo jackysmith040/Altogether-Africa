@@ -2,6 +2,11 @@ import React from 'react';
 import { Mail, Clock, MapPin } from 'lucide-react'; 
 
 const ContactInfo = () => {
+    
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
+    }
+
     return (
         <div className="py-12 px-4 lg:px-20">
             {/* Contact Info Section */}
@@ -27,7 +32,7 @@ const ContactInfo = () => {
             </div>
 
             {/* Contact Form Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-52 lg:gap-8">
                 {/* Google Map Placeholder */}
                 <div className="w-full h-64 md:h-96" loading="lazy">
                     {/* Replace with an actual Google Map integration if needed */}
@@ -68,7 +73,7 @@ const ContactInfo = () => {
                             rows="4"
                             placeholder="Message"
                         ></textarea>
-                        <button className="bg-primary text-white py-3 px-8 rounded-md">Send Message</button>
+                        <button className="bg-primary text-white py-3 px-8 rounded-md" onClick={handleSubmit}>Send Message</button>
                     </form>
                 </div>
             </div>

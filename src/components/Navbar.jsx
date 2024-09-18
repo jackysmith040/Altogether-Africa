@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Link, NavLink } from "react-router-dom";
-import Logo from '/images/image-10-removebg.png';
+// import { Link, NavLink } from "react-router-dom";
+import {HashLink as Link} from "react-router-hash-link";
+import Logo from '/images/image-10.jpg';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -34,11 +35,11 @@ const Navbar = () => {
 
   // Navigation Items
   const NavList = [
-    { title: 'Home', path: '/' },
-    { title: 'About Us', path: '/' },
-    { title: 'Projects', path: '/' },
-    { title: 'What We Do', path: '/' },
-    { title: 'Contact Us', path: '/' }
+    { title: 'Home', path: '#/' },
+    { title: 'What We Do', path: '#what-we-do' },
+    { title: 'About Us', path: '#about' },
+    { title: 'Projects', path: '#projects' },
+    { title: 'Contact Us', path: '#contact' }
   ];
 
   return (
@@ -56,9 +57,9 @@ const Navbar = () => {
           <ul className='hidden lg:flex items-center gap-8 text-lg'>
             {NavList.map(({ title, path }) => (
               <li key={title} className='hover:text-[#325d90]'>
-                <NavLink to={path} className={({ isActive }) => (isActive ? 'active' : '')}>
+                <Link to={path} className={({ isActive }) => (isActive ? 'active' : '')}>
                   {title}
-                </NavLink>
+                </Link>
               </li>
             ))}
             {/* Dropdown Menu for Support */}
