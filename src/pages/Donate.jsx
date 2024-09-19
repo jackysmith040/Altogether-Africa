@@ -38,7 +38,7 @@ const Donate = () => {
           backgroundRepeat: 'no-repeat',
           objectFit: 'cover' 
         }}>
-        <div className="absolute inset-0  bg-gradient-to-t from-black/80  to-black/20 flex flex-col px-12 items-start justify-center p-4"></div>
+        <div className="absolute inset-0  bg-gradient-to-t from-black/80  to-black/30 flex flex-col px-12 items-start justify-center p-4"></div>
       </div>
     
     <div className="min-h-screen flex items-center justify-center my-5">
