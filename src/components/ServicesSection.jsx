@@ -23,7 +23,7 @@ const ServicesSection = () => {
 
 
   return (
-    <div className='min-h-screen relative px-4 xl:px-22' id='services-section'
+    <div className='min-h-screen  relative px-4 xl:px-22' id='services-section'
     style={{
       backgroundImage: `url(${Background})`,
       backgroundPosition: 'center',
@@ -82,7 +82,7 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      <div className='z-20 relative grid grid-cols-1 gap-8 px-12 lg:-mt-[560px]'>
+      <div className='z-20 relative grid grid-cols-1 gap-8 px-12 lg:-mt-[500px]'>
           <div className='flex flex-col items-center lg:items-end'>
             <div className='bg-primary flex items-center lg:mx-24 justify-center w-[200px] h-[150px] text-white rounded-lg'>
               <h3 className='text-4xl font-bold mb-4'>3</h3>
