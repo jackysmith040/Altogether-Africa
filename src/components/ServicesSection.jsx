@@ -23,7 +23,7 @@ const ServicesSection = () => {
 
 
   return (
-    <div className='min-h-screen relative px-4 xl:px-22' id='services-section'
+    <div className='min-h-screen  relative px-4 xl:px-22' id='services-section'
     style={{
       backgroundImage: `url(${Background})`,
       backgroundPosition: 'center',

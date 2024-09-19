@@ -36,7 +36,7 @@ const ContactInfo = () => {
                 {/* Google Map Placeholder */}
                 <div className="w-full h-64 md:h-96" loading="lazy" data-aos="fade-right" data-aos-duration="1500">
                     {/* Replace with an actual Google Map integration if needed */}
-                    <div style={{width: '100%'}}><iframe width="100%" height="444" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=444&amp;hl=en&amp;q=CF443%20Apollonia%20Road,%20Ghana%20Flag,%20Oyarifa,%20Accra,%20Ghana+(All%20Together%20Africa)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps systems</a></iframe></div>
+                    <div style={{width: '100%'}}><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=444&amp;hl=en&amp;q=CF443%20Apollonia%20Road,%20Ghana%20Flag,%20Oyarifa,%20Accra,%20Ghana+(All%20Together%20Africa)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps systems</a></iframe></div>
                 </div>
 
                 {/* Form */}
