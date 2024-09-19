@@ -2,8 +2,24 @@ from fastapi import FastAPI, Form, HTTPException
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from pydantic import EmailStr
 from starlette.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+
+
+### Setup for connecting to react
+origins = ["http://localhost:5173/", "localhost:5173"]
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Configuration for FastAPI-Mail using Gmail
 conf = ConnectionConfig(
@@ -11,7 +27,7 @@ conf = ConnectionConfig(
     MAIL_PASSWORD="oxuzcjkwbdwtiowg",  # Replace with your Gmail password or App Password
     MAIL_FROM="jackysmith040@gmail.com",  # Replace with your Gmail email
     MAIL_PORT=465,
-    MAIL_SERVER="gsmtp.gmail.com",  # Gmail SMTP server
+    MAIL_SERVER="smtp.gmail.com",  # Gmail SMTP server
     MAIL_FROM_NAME="Batman",  # Replace with your name
     MAIL_STARTTLS=False,
     MAIL_SSL_TLS=True,
@@ -27,7 +43,7 @@ fast_mail = FastMail(conf)
 async def send_email(subject: str, email: EmailStr, body: str):
     # Create the email message schema
     message = MessageSchema(
-        subject=subject, recipients=[email], body=body, subtype='html'
+        subject=subject, recipients=[email], body=body, subtype="html"
     )
 
     # Send the email
@@ -36,7 +52,11 @@ async def send_email(subject: str, email: EmailStr, body: str):
 
 @app.post("/contact-us")
 async def contact_us(
-    name: str = Form(...), email: EmailStr = Form(...), message: str = Form(...)
+    name: str = Form(...),
+    email: str = Form(...),
+    message: str = Form(...),
+    phoneNumber: str = Form(...),
+    subject: str = Form(...),
 ):
     # Define the subject and body of the email with HTML formatting
     subject = "Thank you for contacting us!"
@@ -45,7 +65,6 @@ async def contact_us(
         <body>
             <p>Hi {name},</p>
             <p>Thank you for reaching out to us. We will get back to you soon.</p>
-            <p>Your message:</p>
             <p>Best Regards,<br>alltogetherafrica</p>
         </body>
     </html>

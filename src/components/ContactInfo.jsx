@@ -5,6 +5,7 @@ const ContactInfo = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault(); 
+        
     }
 
     return (
