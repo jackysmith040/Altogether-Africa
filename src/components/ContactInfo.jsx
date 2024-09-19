@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Clock, MapPin } from 'lucide-react'; 
+import axios from 'axios';
 
 const ContactInfo = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setphoneNumber] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     
-    const handleSubmit = (e) => {
+    const handleSubmit =  async (e) => {
         e.preventDefault(); 
-    }
+
+        setIsSubmitting(true);
+
+        try {
+            const response = await axios.post('/contact-us', {
+                name,
+                email,
+                phoneNumber,
+                subject,
+                message,
+            });
+
+            setSuccessMessage(response.data.message);
+            setErrorMessage('');
+            } catch (error) {
+                setErrorMessage(error.message);
+                setSuccessMessage('')
+            } finally {
+                setIsSubmitting(false)
+            }
+        }
+    
 
     return (
         <div className="py-12 px-4 lg:px-20">
