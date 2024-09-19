@@ -15,46 +15,53 @@ const ContactInfo = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         setIsSubmitting(true);
-
+    
+        // Create a FormData object to send data as 'multipart/form-data'
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phoneNumber', phoneNumber); // Match field names with backend
+        formData.append('subject', subject);
+        formData.append('message', message);
+    
         try {
-            const response = await axios.post('http://localhost:8000/contact-us', {
-                name,
-                email,
-                phone_number: phoneNumber,  // Ensure field names match backend
-                subject,
-                message,
+            const response = await axios.post('http://localhost:8000/contact-us', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data', // Set the content type
+                },
             });
-
+    
             setSuccessMessage('Message sent successfully!');
             setErrorMessage('');
         } catch (error) {
+            console.error(error.response); // This will show the error response from the server
             setErrorMessage('Failed to send message. Please try again.');
             setSuccessMessage('');
         } finally {
             setIsSubmitting(false);
         }
     };
+    
 
     return (
-        <div className="py-12 px-4 lg:px-20">
+        <div className="px-4 py-12 lg:px-20">
             {/* Contact Info Section */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12" data-aos="zoom-in" data-aos-delay="30" data-aos-duration="1500">
+            <div className="grid grid-cols-1 gap-6 mb-12 md:grid-cols-3" data-aos="zoom-in" data-aos-delay="30" data-aos-duration="1500">
                 <div className="flex flex-col items-center text-center">
-                    <Mail className="text-primary w-12 h-12 mb-2" />
+                    <Mail className="w-12 h-12 mb-2 text-primary" />
                     <h3 className="text-lg font-semibold">Contacts Info</h3>
                     <p>Phone Number: 233 (0) 54 240 3741</p>
                     <p>alltogetherafrica@gmail.com</p>
                 </div>
                 <div className="flex flex-col items-center text-center" data-aos="zoom-in" data-aos-delay="60" data-aos-duration="1500">
-                    <Clock className="text-primary w-12 h-12 mb-2" />
+                    <Clock className="w-12 h-12 mb-2 text-primary" />
                     <h3 className="text-lg font-semibold">Opening Hour</h3>
                     <p>Mon-Fri: 9:30AM - 6:30PM</p>
                     <p>Sat-Sun: 9:30AM - 6:30PM</p>
                 </div>
                 <div className="flex flex-col items-center text-center" data-aos="zoom-in" data-aos-delay="90" data-aos-duration="1500">
-                    <MapPin className="text-primary w-12 h-12 mb-2" />
+                    <MapPin className="w-12 h-12 mb-2 text-primary" />
                     <h3 className="text-lg font-semibold">Service Center</h3>
                     <p>CF443 Apollonia Road, Ghana Flag, Oyarifa</p>
                     <p>Accra, Ghana</p>
@@ -81,13 +88,13 @@ const ContactInfo = () => {
 
                 {/* Form */}
                 <div data-aos="fade-left" data-aos-duration="1500">
-                    <h3 className="text-primary uppercase font-semibold mb-4">Talk to Us</h3>
-                    <h2 className="text-2xl font-bold mb-6">Do you have any question?</h2>
-                    <form className="space-y-4" onSubmit={handleSubmit}>
+                    <h3 className="mb-4 font-semibold uppercase text-primary">Talk to Us</h3>
+                    <h2 className="mb-6 text-2xl font-bold">Do you have any question?</h2>
+                    <form className="space-y-4" onSubmit={handleSubmit} method="POST">
                         <div className="grid grid-cols-2 gap-4">
                             <input
                                 type="text"
-                                className="p-4 border border-gray-300 rounded-md w-full"
+                                className="w-full p-4 border border-gray-300 rounded-md"
                                 placeholder="Your Name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -95,7 +102,7 @@ const ContactInfo = () => {
                             />
                             <input
                                 type="email"
-                                className="p-4 border border-gray-300 rounded-md w-full"
+                                className="w-full p-4 border border-gray-300 rounded-md"
                                 placeholder="Email Address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +112,7 @@ const ContactInfo = () => {
                         <div className="grid grid-cols-2 gap-4">
                             <input
                                 type="text"
-                                className="p-4 border border-gray-300 rounded-md w-full"
+                                className="w-full p-4 border border-gray-300 rounded-md"
                                 placeholder="Phone Number"
                                 value={phoneNumber}
                                 onChange={(e) => setPhoneNumber(e.target.value)}
@@ -113,7 +120,7 @@ const ContactInfo = () => {
                             />
                             <input
                                 type="text"
-                                className="p-4 border border-gray-300 rounded-md w-full"
+                                className="w-full p-4 border border-gray-300 rounded-md"
                                 placeholder="Subject"
                                 value={subject}
                                 onChange={(e) => setSubject(e.target.value)}
@@ -121,7 +128,7 @@ const ContactInfo = () => {
                             />
                         </div>
                         <textarea
-                            className="p-4 border border-gray-300 rounded-md w-full"
+                            className="w-full p-4 border border-gray-300 rounded-md"
                             rows="4"
                             placeholder="Message"
                             value={message}
@@ -130,14 +137,14 @@ const ContactInfo = () => {
                         ></textarea>
                         <button
                             type="submit"
-                            className="bg-primary text-white py-3 px-8 rounded-md"
+                            className="px-8 py-3 text-white rounded-md bg-primary"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>
                     </form>
-                    {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
-                    {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
+                    {successMessage && <p className="mt-4 text-green-500">{successMessage}</p>}
+                    {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>}
                 </div>
             </div>
         </div>
