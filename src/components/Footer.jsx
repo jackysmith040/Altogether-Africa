@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {HashLink as Link} from 'react-router-hash-link'
 import Logo from '/images/image-10.jpg'
 import { Facebook, Linkedin, Twitter, Send} from 'lucide-react'; 
 
@@ -39,10 +39,10 @@ const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold mb-4">Quick Link</h4>
           <ul className="space-y-2 text-sm font-light">
-            <li><Link to="#" className="hover:text-blue-300">Our Projects</Link></li>
-            <li><Link to="#" className="hover:text-blue-300">What We Do</Link></li>
-            <li><Link to="#" className="hover:text-blue-300">Get Involved</Link></li>
-            <li><Link to="#" className="hover:text-blue-300">Our Team</Link></li>
+            <li><Link to="#projects" className="hover:text-blue-300">Our Projects</Link></li>
+            <li><Link to="#what-we-do" className="hover:text-blue-300">What We Do</Link></li>
+            <li><Link to="/get-involved" className="hover:text-blue-300">Get Involved</Link></li>
+            <li><Link to="#team" className="hover:text-blue-300">Our Team</Link></li>
           </ul>
         </div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold mb-4">Customer Services</h4>
           <ul className="space-y-2 text-sm font-light">
-            <li><Link to="#" className="hover:text-blue-300">Contact Us</Link></li>
+            <li><Link to="#contact" className="hover:text-blue-300">Contact Us</Link></li>
             <li><Link to="#" className="hover:text-blue-300">FAQs</Link></li>
             <li><Link to="#" className="hover:text-blue-300">Terms & Conditions</Link></li>
           </ul>

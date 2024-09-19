@@ -5,7 +5,7 @@ const imageSlide = [
         title: 'ALL TOGETHER AFRICA',
         subtitle: 'We foster inclusive success for Africa through best practices, skills, and technologies.',
         description: 'We want to see & live in Africa with fewer challenges, more progress',
-        link: '/',
+        link: '/get-involved',
         linkText: 'Get Started', 
     },
     {
@@ -13,7 +13,7 @@ const imageSlide = [
         title: 'ALL TOGETHER AFRICA',
         subtitle: 'We foster inclusive success for Africa through best practices, skills, and technologies.',
         description: 'We want to see & live in Africa with fewer challenges, more progress',
-        link: '/',
+        link: '/get-involved',
         linkText: 'Get Started', 
     },
    
