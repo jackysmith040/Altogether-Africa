@@ -15,27 +15,34 @@ const ContactInfo = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         setIsSubmitting(true);
-
+    
+        // Create a FormData object to send data as 'multipart/form-data'
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phoneNumber', phoneNumber); // Match field names with backend
+        formData.append('subject', subject);
+        formData.append('message', message);
+    
         try {
-            const response = await axios.post('http://localhost:8000/contact-us', {
-                name,
-                email,
-                phone_number: phoneNumber,  // Ensure field names match backend
-                subject,
-                message,
+            const response = await axios.post('http://localhost:8000/contact-us', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data', // Set the content type
+                },
             });
-
+    
             setSuccessMessage('Message sent successfully!');
             setErrorMessage('');
         } catch (error) {
+            console.error(error.response); // This will show the error response from the server
             setErrorMessage('Failed to send message. Please try again.');
             setSuccessMessage('');
         } finally {
             setIsSubmitting(false);
         }
     };
+    
 
     return (
         <div className="px-4 py-12 lg:px-20">
@@ -83,7 +90,7 @@ const ContactInfo = () => {
                 <div data-aos="fade-left" data-aos-duration="1500">
                     <h3 className="mb-4 font-semibold uppercase text-primary">Talk to Us</h3>
                     <h2 className="mb-6 text-2xl font-bold">Do you have any question?</h2>
-                    <form className="space-y-4" onSubmit={handleSubmit}>
+                    <form className="space-y-4" onSubmit={handleSubmit} method="POST">
                         <div className="grid grid-cols-2 gap-4">
                             <input
                                 type="text"
