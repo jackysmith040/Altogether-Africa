@@ -32,7 +32,7 @@ const GetInvolved = () => {
   return (
     <main className='max-w-screen-7xl overflow-x-hidden bg-gray-100'>
       <Navbar />
-      <div className='h-[400px] relative overflow-hidden w-full'
+      <div className='h-[300px] relative overflow-hidden w-full'
         style={{
           backgroundImage: 'url(/images/background1.jpg)',
           backgroundSize: 'cover',

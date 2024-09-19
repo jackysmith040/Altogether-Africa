@@ -23,7 +23,7 @@ AOS.init();
 
 const App = () => {
   return (
-    <main className='max-w-screen-7xl overflow-x-hidden'>
+    <main className='max-w-screen-7xl overflow-x-hidden bg-slate-100'>
       <Navbar />
       <section id='#home' data-aos="fade-down" data-aos-duration="1500" data-aos-linear="linear">
         <BackgroundSlider />
@@ -83,7 +83,7 @@ const App = () => {
       </section>
 
       <section id='projects' data-aos="fade-up" data-aos-duration='1500'>
-      <ServicesSection />
+        <ServicesSection />
       </section>
 
       <section className='h-full xl:px-24 px-4' data-aos="zoom-in"  data-aos-duration="500">

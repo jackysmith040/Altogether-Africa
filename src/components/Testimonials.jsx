@@ -63,7 +63,7 @@ const Testimonials = () => {
             >
                 {testimonials.map((testimonial, index) => (
                     <SwiperSlide key={index}>
-                        <div className="max-w-sm mx-auto bg-white shadow-md rounded-xl overflow-hidden py-6 border border-gray-200">
+                        <div className="max-w-sm mx-auto bg-white shadow-sm rounded-xl overflow-hidden py-6 border border-blue-200">
                             <div className="p-6">
                                 {/* Quote icon */}
                                 <div className="flex justify-center mb-4">
