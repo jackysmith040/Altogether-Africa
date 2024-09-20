@@ -204,7 +204,7 @@ const GetInvolved = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600 transition"
+                  className="bg-blue-500 text-white py-2 px-6 rounded-sm hover:bg-blue-600 transition"
                 >
                   Submit
                 </button>

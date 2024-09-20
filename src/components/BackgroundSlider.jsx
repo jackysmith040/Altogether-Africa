@@ -42,7 +42,7 @@ const BackgroundSlider = () => {
                     <h6 className="text-gray-300 text-sm font-extrabold uppercase mb-3 tracking-[5px]">{slide.title}</h6>
                     <h2 className="text-white text-4xl font-bold uppercase mb-2 tracking-[5px] md:w-1/2">{slide.subtitle}</h2>
                     <p className="text-gray-300 text-xl font-light mb-4">{slide.description}</p>
-                    <Link to={slide.link} className='border border-[#325d90] px-7 py-3 mt-4 uppercase text-md text-[#fff] font-semibold bg-primary rounded-md hover:bg-white hover:text-primary'>
+                    <Link to={slide.link} className='border border-[#325d90] px-7 py-3 mt-4 uppercase text-md text-[#fff] font-semibold bg-primary rounded-sm hover:bg-white hover:text-primary'>
                     {slide.linkText}
                     </Link>
                 </div>
