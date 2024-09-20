@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+backend/.email-serve/
+backend/.mypy_cache/
+backend/__pycache__/*
