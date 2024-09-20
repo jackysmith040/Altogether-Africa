@@ -1,9 +1,9 @@
 import Footer from '@/components/Footer';
 import {Link} from 'react-router-dom'
 import React, { useState } from 'react';
+import axios from 'axios'; // To send HTTP requests
 
 const GetInvolved = () => {
-  // Move useState inside the component
   const [formData, setFormData] = useState({
     fullName: '',
     country: '',
@@ -18,20 +18,50 @@ const GetInvolved = () => {
     giveBackPledge: ''
   });
 
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    setLoading(true);
+    setMessage('');
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.fullName);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('country', formData.country);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('address', formData.address);
+    formDataToSend.append('organisationName', formData.organisationName);
+    formDataToSend.append('selectedItem', formData.selectedItem);
+    formDataToSend.append('organisationProfile', formData.organisationProfile);
+    formDataToSend.append('website', formData.website);
+    formDataToSend.append('statementOfRequest', formData.statementOfRequest);
+    formDataToSend.append('giveBackPledge', formData.giveBackPledge);
+  
+    try {
+      const response = await axios.post('http://localhost:8000/get-started', formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      setMessage(response.data.message);
+    } catch (error) {
+      setMessage('Error sending email. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
+  
 
   return (
-    <main className='max-w-screen-7xl overflow-x-hidden bg-gray-100'>
-      <div className="flex items-center justify-center my-32 gap-2 absolute top-0 left-0 right-0 z-50 text-white text-3xl">
+    <main className='overflow-x-hidden bg-gray-100 max-w-screen-7xl'>
+      <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 my-32 text-3xl text-white">
           <Link to="/" className='hover:text-gray-300'>Home</Link> <p>/</p> <Link to="/get-involved" className="font-semibold text-white hover:text-gray-300">Get Involved</Link>
       </div>
       <div className='h-[300px] relative overflow-hidden w-full'
@@ -42,12 +72,12 @@ const GetInvolved = () => {
           backgroundRepeat: 'no-repeat',
           objectFit: 'cover' 
         }}>
-        <div className="absolute inset-0  bg-gradient-to-t from-black/80  to-black/20 flex flex-col px-12 items-start justify-center p-4"></div>
+        <div className="absolute inset-0 flex flex-col items-start justify-center p-4 px-12 bg-gradient-to-t from-black/80 to-black/20"></div>
       </div>
       <section className=''>
-        <div className="min-h-screen flex items-center justify-center my-5">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
-            <h2 className="text-2xl font-semibold text-center mb-6">Get Involved</h2>
+        <div className="flex items-center justify-center min-h-screen my-5">
+          <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg">
+            <h2 className="mb-6 text-2xl font-semibold text-center">Get Involved</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Full Name */}
               <div>
@@ -57,7 +87,7 @@ const GetInvolved = () => {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 />
               </div>
@@ -70,7 +100,7 @@ const GetInvolved = () => {
                   name="country"
                   value={formData.country}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 />
               </div>
@@ -83,7 +113,7 @@ const GetInvolved = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 />
               </div>
@@ -96,7 +126,7 @@ const GetInvolved = () => {
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 />
               </div>
@@ -109,7 +139,7 @@ const GetInvolved = () => {
                   name="organisationName"
                   value={formData.organisationName}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 />
               </div>
@@ -121,7 +151,7 @@ const GetInvolved = () => {
                   name="selectedItem"
                   value={formData.selectedItem}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 >
                   <option value="">Select an option</option>
@@ -140,7 +170,7 @@ const GetInvolved = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 />
               </div>
@@ -152,7 +182,7 @@ const GetInvolved = () => {
                   name="organisationProfile"
                   value={formData.organisationProfile}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   rows="3"
                   required
                 />
@@ -166,7 +196,7 @@ const GetInvolved = () => {
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   required
                 />
               </div>
@@ -180,7 +210,7 @@ const GetInvolved = () => {
                   name="statementOfRequest"
                   value={formData.statementOfRequest}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   rows="5"
                   maxLength="500"
                   required
@@ -194,7 +224,7 @@ const GetInvolved = () => {
                   name="giveBackPledge"
                   value={formData.giveBackPledge}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                  className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                   rows="2"
                   required
                 />
@@ -204,11 +234,14 @@ const GetInvolved = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white py-2 px-6 rounded-sm hover:bg-blue-600 transition"
+                  className="px-6 py-2 text-white transition bg-blue-500 rounded-sm hover:bg-blue-600"
                 >
-                  Submit
+                  {loading ? 'Submitting...' : 'Submit'}
                 </button>
               </div>
+
+              {/* Message */}
+              {message && <p className="mt-4 text-center">{message}</p>}
             </form>
           </div>
         </div>
