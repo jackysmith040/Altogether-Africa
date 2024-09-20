@@ -2,21 +2,22 @@
     "version": 2,
     "builds": [
         {
-            "src": "frontend/package.json",
+            "src": "/package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "./build"
+                "distDir": "/build"
             }
         },
         {
-            "src": "./backend/main.py",
+            "devCommand": "fastapi run ./main.py",
+            "src": "/backend/main.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "./backend/main.py"
+            "dest": "/backend/main.py"
         },
         {
             "src": "/(.*)",
