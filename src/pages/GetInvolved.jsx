@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import {Link} from 'react-router-dom'
 import React, { useState } from 'react';
 
 const GetInvolved = () => {
@@ -31,7 +31,9 @@ const GetInvolved = () => {
 
   return (
     <main className='max-w-screen-7xl overflow-x-hidden bg-gray-100'>
-      <Navbar />
+      <div className="flex items-center justify-center my-32 gap-2 absolute top-0 left-0 right-0 z-50 text-white text-3xl">
+          <Link to="/" className='hover:text-gray-300'>Home</Link> <p>/</p> <Link to="/get-involved" className="font-semibold text-white hover:text-gray-300">Get Involved</Link>
+      </div>
       <div className='h-[300px] relative overflow-hidden w-full'
         style={{
           backgroundImage: 'url(/images/background1.jpg)',

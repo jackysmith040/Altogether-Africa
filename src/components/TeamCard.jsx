@@ -10,17 +10,17 @@ const teamMembers = [
         socials: {
             facebook: "#",
             twitter: "#",
-            linkedin: "#"
+            linkedin: "https://www.linkedin.com/in/george-kofi-akomeah-4a54b2147/"
         }
     },
     {
         name: "Noah Nash Hoenyefia",
         title: "General Manager",
-        image: "/images/Noah.jpg",
+        image: "/images/Noah Nash.jpeg",
         socials: {
             facebook: "#",
             twitter: "#",
-            linkedin: "#"
+            linkedin: "https://www.linkedin.com/in/noah-nash-h-21a8a679/"
         }
     }
 ];
