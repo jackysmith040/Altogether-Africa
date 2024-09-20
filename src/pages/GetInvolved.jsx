@@ -1,7 +1,9 @@
 import Footer from '@/components/Footer';
 import {Link} from 'react-router-dom'
 import React, { useState } from 'react';
-import axios from 'axios'; // To send HTTP requests
+import axios from 'axios'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GetInvolved = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +21,7 @@ const GetInvolved = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  // const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +31,7 @@ const GetInvolved = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setMessage('');
+    // setMessage('');
   
     const formDataToSend = new FormData();
     formDataToSend.append('name', formData.fullName);
@@ -50,9 +52,9 @@ const GetInvolved = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      setMessage(response.data.message);
+      toast.success(response.data.message || "Form submitted successfully!");
     } catch (error) {
-      setMessage('Error sending email. Please try again.');
+      toast.error('Error sending email. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -61,6 +63,7 @@ const GetInvolved = () => {
 
   return (
     <main className='overflow-x-hidden bg-gray-100 max-w-screen-7xl'>
+       <ToastContainer />
       <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 my-32 text-3xl text-white">
           <Link to="/" className='hover:text-gray-300'>Home</Link> <p>/</p> <Link to="/get-involved" className="font-semibold text-white hover:text-gray-300">Get Involved</Link>
       </div>
@@ -241,7 +244,7 @@ const GetInvolved = () => {
               </div>
 
               {/* Message */}
-              {message && <p className="mt-4 text-center">{message}</p>}
+              {/* {message && <p className="mt-4 text-center">{message}</p>} */}
             </form>
           </div>
         </div>

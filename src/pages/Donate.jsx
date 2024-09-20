@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Donate = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +20,8 @@ const Donate = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  // const [successMessage, setSuccessMessage] = useState('');
+  // const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,11 +44,11 @@ const Donate = () => {
         },
       });
 
-      setSuccessMessage('Thank you for your donation! Email confirmation has been sent.');
-      setErrorMessage('');
+      toast.success('Thank you for your donation! Email confirmation has been sent.');
+      // setErrorMessage('');
     } catch (error) {
-      setErrorMessage('Failed to process donation. Please try again.');
-      setSuccessMessage('');
+      toast.error('Failed to process donation. Please try again.');
+      // setSuccessMessage('');
     } finally {
       setIsSubmitting(false);
     }
@@ -54,6 +56,7 @@ const Donate = () => {
 
   return (
     <main className='overflow-hidden bg-gray-100 max-w-screen-7xl'>
+        <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 my-32 text-3xl text-white">
         <Link to="/" className='hover:text-gray-300'>Home</Link><p>/</p> <Link to="/donate" className="font-semibold text-white hover:text-gray-300">Donate</Link>
       </div>
@@ -218,8 +221,8 @@ const Donate = () => {
               </button>
             </div>
           </form>
-          {successMessage && <p className="mt-4 text-green-500">{successMessage}</p>}
-          {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>}
+          {/* {successMessage && <p className="mt-4 text-green-500">{successMessage}</p>}
+          {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>} */}
         </div>
       </div>
       <Footer />
