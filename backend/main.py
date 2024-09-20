@@ -23,6 +23,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.get("/")
+async def success_message():
+    return {"message": "Succesfully Served and Deployed"}
+
 # SMTP configuration using environment variables
 conf = ConnectionConfig(
     MAIL_USERNAME=os.getenv("EMAIL"),
