@@ -64,7 +64,7 @@ const GetInvolved = () => {
   return (
     <main className='overflow-x-hidden bg-gray-100 max-w-screen-7xl'>
        <ToastContainer />
-      <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 my-32 text-3xl text-white">
+      <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 my-32 text-2xl text-white">
           <Link to="/" className='hover:text-gray-300'>Home</Link> <p>/</p> <Link to="/get-involved" className="font-semibold text-white hover:text-gray-300">Get Involved</Link>
       </div>
       <div className='h-[300px] relative overflow-hidden w-full'
