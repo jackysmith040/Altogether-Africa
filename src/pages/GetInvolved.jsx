@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import {Link} from 'react-router-dom'
 import React, { useState } from 'react';
 import axios from 'axios'; // To send HTTP requests
 
@@ -46,7 +46,9 @@ const GetInvolved = () => {
 
   return (
     <main className='overflow-x-hidden bg-gray-100 max-w-screen-7xl'>
-      <Navbar />
+      <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 my-32 text-3xl text-white">
+          <Link to="/" className='hover:text-gray-300'>Home</Link> <p>/</p> <Link to="/get-involved" className="font-semibold text-white hover:text-gray-300">Get Involved</Link>
+      </div>
       <div className='h-[300px] relative overflow-hidden w-full'
         style={{
           backgroundImage: 'url(/images/background1.jpg)',
@@ -217,8 +219,7 @@ const GetInvolved = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="px-6 py-2 text-white transition bg-blue-500 rounded-md hover:bg-blue-600"
-                  disabled={loading}
+                  className="px-6 py-2 text-white transition bg-blue-500 rounded-sm hover:bg-blue-600"
                 >
                   {loading ? 'Submitting...' : 'Submit'}
                 </button>

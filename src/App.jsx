@@ -31,7 +31,7 @@ const App = () => {
       <section id='what-we-do' data-aos="zoom-in"  data-aos-duration="500">
         <div className='flex flex-col items-center mt-5 pt-5'>
           <h2 className='font-semibold text-3xl'>What We Do</h2>
-          <p className='text-center pt-3 lg:w-1/2 font-light'>A focused commitment to solving real-world problems through sustainable, cross-sector projects, driven by passion and teamwork until solutions prevail.</p>
+          <p className='text-center pt-3 lg:w-1/2 font-light'>Our passion drives cross-sector projects that solve real-world problems through sustainable, cross-sector partnerships.</p>
         </div>
         <div data-aos="zoom-in" data-aos-delay="70" data-aos-duration="1500">
           <Icons />
@@ -49,13 +49,7 @@ const App = () => {
           <div className="lg:w-1/2 w-full space-y-4" data-aos="fade-left" data-aos-duration="1500">
             <h6 className="text-[#325d90] uppercase text-md tracking-[3px] font-bold">About Us</h6>
             <p className='font-light text-gray-800 text-justify'>
-              We are a bridge. 
-              Success crosses through us to and within Africa. We are a non-profit. We mobilise efforts that ensure continuous success for our land. 
-              We identify specific challenges of African governments, businesses, people and communities. 
-              We go on to discover working best practices and technologies implemented abroad. 
-              We, then, ensure smooth transfer of the solutions. 
-              We are passionately committed to this Sustainable Development Goal (SDG 8) of the UN "promote inclusive and sustainable economic growth, employment and decent work for all".
-              Together, we have a shared responsibility to take action on our continent’s most persistent developmental issues. 
+            We serve as a bridge, working as a non-profit organization to facilitate ongoing success for Africa. We specifically address the challenges faced by African governments, businesses, and communities. Our approach involves identifying successful practices and technologies from other countries and facilitating their transfer to Africa. Our passionate commitment lies in supporting the UN's Sustainable Development Goal 8, which aims to promote inclusive and sustainable economic growth, employment, and decent work for all. We believe that it is our collective responsibility to take action on the persistent developmental issues in our continent.
             </p>
 
             {/* Accordion */}
@@ -65,7 +59,7 @@ const App = () => {
                   Our Vision
                 </AccordionTrigger>
                 <AccordionContent className="font-light text-gray-700 text-justify font-open">
-                Together, we want to see and live in a Continent (Africa) with fewer challenges, more progress.
+                Together, we want to see and live on a continent (Africa) with fewer challenges and more progress.
                 </AccordionContent>
               </AccordionItem>
 
@@ -74,7 +68,7 @@ const App = () => {
                   Our Mission
                 </AccordionTrigger>
                 <AccordionContent className="font-light text-gray-700 text-justify font-open">
-                Foster an all-inclusive success for Africa through transfers of best practices, skills and technologies
+                Contribute to Africa's development through the transfer of best practices, skills, and technologies
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

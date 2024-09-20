@@ -19,8 +19,8 @@ const Footer = () => {
                 <img src={Logo} alt="Logo of all together africa" />
             </div>
           </div>
-          <p className="text-sm font-light">
-          The non-profit addresses African challenges using technology and best practices for inclusive growth and decent jobs, aligning with UN SDG 8.
+          <p className="text-sm font-light text-justify px-1">
+          The Alltogather Africa is a non-profit organization based in West Africa that aims to address African youth challenges using technology for inclusive growth and decent employment in line with UN Sustainable Development Goal 8.
           </p>
           <div className="flex space-x-4">
             <Link to="#" aria-label="LinkedIn" className="text-white hover:text-blue-300">

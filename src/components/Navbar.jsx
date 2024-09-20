@@ -46,7 +46,7 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 px-2 xl:px-22 transition-all duration-300  ${
       isScrolled ? 'bg-primary text-white shadow-md' : 'bg-transparent text-[#f8f8f8]'
     }`}>
-      <nav className="flex justify-between items-center container md:py-2 pt-3 pb-3">
+      <nav className="flex justify-between items-center container md:py-2 pt-2 pb-3">
         {/* Logo */}
         <div>
           <img src={Logo} alt="logo" />
@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* Navigation Lists */}
         <div className='flex item-center gap-8'>
-          <ul className='hidden lg:flex items-center gap-8 text-lg'>
+          <ul className='hidden lg:flex items-center gap-8 text-lg font-medium'>
             {NavList.map(({ title, path }) => (
               <li key={title} className='hover:text-blue-300'>
                 <Link to={path} className={({ isActive }) => (isActive ? 'active' : '')}>
