@@ -39,8 +39,8 @@ const BackgroundSlider = () => {
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="absolute inset-0  bg-gradient-to-r from-black/80  to-black/15 flex flex-col px-6 items-start justify-center p-4 pt-10">
-                    <h6 className="text-gray-300 text-sm font-extrabold uppercase mb-3 tracking-[5px]">{slide.title}</h6>
-                    <h2 className="text-white text-4xl font-bold uppercase mb-2 tracking-[5px] md:w-1/2">{slide.subtitle}</h2>
+                    <h6 className="text-gray-300 text-sm font-bold uppercase mb-3 tracking-[5px]">{slide.title}</h6>
+                    <h2 className="text-white text-2xl font-extrabold uppercase mb-2 tracking-[5px] md:w-1/2">{slide.subtitle}</h2>
                     <p className="text-gray-300 text-xl font-light mb-4">{slide.description}</p>
                     <Link to={slide.link} className='border border-[#325d90] px-7 py-3 mt-4 uppercase text-md text-[#fff] font-semibold bg-primary rounded-sm hover:bg-white hover:text-primary'>
                     {slide.linkText}
