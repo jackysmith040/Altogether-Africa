@@ -25,4 +25,4 @@ dist-ssr
 
 backend/.email-serve/
 backend/.mypy_cache/
-backend/__pycache__/
+backend/__pycache__/*
