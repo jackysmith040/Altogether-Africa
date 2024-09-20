@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import {Link} from 'react-router-dom'
 
 const Donate = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +29,9 @@ const Donate = () => {
 
   return (
     <main className=' bg-gray-100 max-w-screen-7xl overflow-hidden'>
-       <Navbar />
+       <div className="flex items-center justify-center my-32 gap-2 absolute top-0 left-0 right-0 z-50 text-white text-3xl">
+            <Link to="/" className='hover:text-gray-300'>Home</Link><p>/</p> <Link to="/donate" className="font-semibold text-white hover:text-gray-300">Donate</Link>
+        </div>
       <div className='h-[300px] relative overflow-hidden w-full'
         style={{
           backgroundImage: 'url(/images/background1.jpg)',
@@ -184,7 +186,7 @@ const Donate = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600 transition"
+              className="bg-blue-500 text-white py-3 px-6 rounded-sm hover:bg-blue-600 transition"
               onClick={handleSubmit}
             >
               Donate
