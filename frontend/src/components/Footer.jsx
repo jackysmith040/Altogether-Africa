@@ -1,7 +1,7 @@
 import React from 'react';
 import {HashLink as Link} from 'react-router-hash-link'
 import Logo from '/images/image-10.jpg'
-import { Facebook, Linkedin, Twitter, Send} from 'lucide-react'; 
+import { Facebook, Linkedin, Twitter, Youtube, Send, YoutubeIcon} from 'lucide-react'; 
 
 const Footer = () => {
 
@@ -23,14 +23,17 @@ const Footer = () => {
           The Alltogather Africa is a non-profit organization based in West Africa that aims to address African youth challenges using technology for inclusive growth and decent employment in line with UN Sustainable Development Goal 8.
           </p>
           <div className="flex space-x-4">
-            <Link to="#" aria-label="LinkedIn" className="text-white hover:text-blue-300">
+            <Link to="https://www.linkedin.com/company/all-together-africa" aria-label="LinkedIn" className="text-white hover:text-blue-300">
               <Linkedin />
             </Link>
-            <Link to="#" aria-label="LinkedIn" className="text-white hover:text-blue-300">
+            <Link to="https://web.facebook.com/alltogetherafrica" aria-label="Facebook" className="text-white hover:text-blue-300">
               <Facebook />
             </Link>
-            <Link to="#" aria-label="LinkedIn" className="text-white hover:text-blue-300">
+            <Link to="#" aria-label="Twitter" className="text-white hover:text-blue-300">
               <Twitter />
+            </Link>
+            <Link to="https://www.youtube.com/@AllTogetherAfrica" aria-label="Youtube" className="text-white hover:text-blue-300">
+              <YoutubeIcon />
             </Link>
           </div>
         </div>
