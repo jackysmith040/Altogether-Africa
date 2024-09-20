@@ -30,11 +30,25 @@ const GetInvolved = () => {
     e.preventDefault();
     setLoading(true);
     setMessage('');
-
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.fullName);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('country', formData.country);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('address', formData.address);
+    formDataToSend.append('organisationName', formData.organisationName);
+    formDataToSend.append('selectedItem', formData.selectedItem);
+    formDataToSend.append('organisationProfile', formData.organisationProfile);
+    formDataToSend.append('website', formData.website);
+    formDataToSend.append('statementOfRequest', formData.statementOfRequest);
+    formDataToSend.append('giveBackPledge', formData.giveBackPledge);
+  
     try {
-      const response = await axios.post('http://localhost:8000/get-started', {
-        name: formData.fullName,
-        email: formData.email,
+      const response = await axios.post('http://localhost:8000/get-started', formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
       setMessage(response.data.message);
     } catch (error) {
@@ -43,6 +57,7 @@ const GetInvolved = () => {
       setLoading(false);
     }
   };
+  
 
   return (
     <main className='overflow-x-hidden bg-gray-100 max-w-screen-7xl'>
